@@ -1,0 +1,9 @@
+services:
+  homepage:
+    build: .
+    container_name: homepage
+    ports:
+      - "30010:3000"
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json:ro
