@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/
 
 COPY --from=builder /app/target/release/homey /app/homey
 COPY config.json /app/config.json
+COPY static /app/static
 
 EXPOSE 3000
 CMD ["/app/homey"]
