@@ -1,0 +1,85 @@
+/* ---- Reset / base ---- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: #0f0f12;
+    color: #eaeaf0;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+}
+
+/* ---- Card grid ---- */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    max-width: calc(4 * 140px + 3 * 1rem);
+    gap: 1rem;
+}
+
+/* ---- Card ---- */
+li {
+    background: #1a1a22;
+    border-radius: 12px;
+    padding: 0.75rem;
+
+    aspect-ratio: 1 / 1;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    background: #222232;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Name ---- */
+li a {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+
+    color: #cfcfff;
+    text-decoration: none;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    line-height: 1.2;
+}
+
+.icon {
+    width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.label {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #cfcfff;
+    line-height: 1.2;
+}
