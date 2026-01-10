@@ -1,9 +1,10 @@
 services:
-  homepage:
-    build: .
-    container_name: homepage
-    ports:
-      - "30010:3000"
+  homey:
+    image: ghcr.io/parthshahp/homey:latest
+    container_name: homey
     restart: unless-stopped
+    ports:
+      - 30010:3000
     volumes:
-      - ./config.json:/app/config.json:ro
+      - ./config:/app/config.json
+networks: {}

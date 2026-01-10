@@ -11,6 +11,7 @@ struct AppState {
 
 #[derive(Debug, Clone, Deserialize)]
 struct Config {
+    #[serde(default = "default_title")]
     title: String,
     links: Vec<LinkItem>,
 }
@@ -89,4 +90,8 @@ fn parse_icon_name(name: String) -> String {
 fn load_config(path: &str) -> Result<Config, Box<dyn std::error::Error>> {
     let raw = std::fs::read_to_string(path)?;
     Ok(serde_json::from_str(&raw)?)
+}
+
+fn default_title() -> String {
+    "Homey".to_string()
 }
